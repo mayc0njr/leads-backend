@@ -1,0 +1,7 @@
+PATCH http://localhost:5400/contact/1
+Accept: application/json
+Content-Type: application/json
+
+{
+    "status": 0
+}

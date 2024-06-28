@@ -1,0 +1,2 @@
+GET http://localhost:5400/contact/waiting
+Accept: application/json

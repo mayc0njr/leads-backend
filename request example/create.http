@@ -1,0 +1,14 @@
+POST http://localhost:5400/contact/
+Accept: application/json
+Content-Type: application/json
+
+{
+      "name": "Clark Kent",
+      "createdDate": "2021-01-22T17:14:24Z",
+      "suburb": "Metropolis",
+      "CategoryId": 2,
+      "description": "Man of Steel",
+      "price": 9999.99,
+      "phone": "880649211",
+      "email": "kuz@iwocir.tc"
+}
