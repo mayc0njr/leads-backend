@@ -1,17 +1,25 @@
 using Microsoft.EntityFrameworkCore;
 using LeadsManagement.Entities;
 using LeadsManagement.Application.Interfaces;
+using System.Reflection;
 
 namespace LeadsManagement.Repository;
 public class ApplicationDbContext : DbContext, IApplicationDbContext
 {
+    public ApplicationDbContext()
+    {
+    }
+    public ApplicationDbContext(DbContextOptions options) : base(options)
+    {
+    }
     public DbSet<Contact> Contacts { get; set; }
     public DbSet<Category> Categories { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder options) =>
-            options.UseSqlite("DataSource=leads.db;Cache=Shared");
+            options.UseSqlServer("Server=localhost,1433;Database=SeeSharpBlog;User ID=sa;Password=P@ssw0rd;TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         base.OnModelCreating(modelBuilder);
         List<Category> categories = new List<Category>
         {
