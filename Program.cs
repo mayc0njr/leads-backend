@@ -12,7 +12,22 @@ builder.Services.AddDbContext<ApplicationDbContext>();
 
 
 builder.Services.AddControllers();
-
+// builder.Services.AddCors(options =>
+// {
+//     options.AddPolicy(name: "AllowAnyOrigin",
+//                       policy  =>
+//                       {
+//                           policy.AllowAnyOrigin();
+//                           policy.AllowAnyHeader();
+//                           policy.AllowAnyMethod();
+//                       });
+// });
+builder.Services.AddResponseCaching();
 var app = builder.Build();
+app.UseCors(builder => builder
+       .AllowAnyHeader()
+       .AllowAnyMethod()
+       .AllowAnyOrigin()
+    );
 app.MapControllers();
 app.Run();
