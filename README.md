@@ -19,3 +19,5 @@ Then, run the project with:
 ```
 dotnet run
 ```
+
+Already included some examples of http requests for each of the endpoints.
