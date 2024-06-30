@@ -8,9 +8,13 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
 {
     public ApplicationDbContext()
     {
+        Contacts = Set<Contact>();
+        Categories = Set<Category>();
     }
     public ApplicationDbContext(DbContextOptions options) : base(options)
     {
+        Contacts = Set<Contact>();
+        Categories = Set<Category>();
     }
     public DbSet<Contact> Contacts { get; set; }
     public DbSet<Category> Categories { get; set; }
