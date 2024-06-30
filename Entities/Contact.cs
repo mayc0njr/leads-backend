@@ -7,8 +7,8 @@ public class Contact
     public int Id { get; set; }
     [StringLength(80, MinimumLength = 4)]
     public string? Name { get; set; }
-    [StringLength(400, MinimumLength = 4)]
     public DateTime CreatedDate { get; set; } = DateTime.Now;
+    [StringLength(400, MinimumLength = 4)]
     public string? Description { get; set; }
     public Category? Category { get; set; }
     public int CategoryId { get; set; }

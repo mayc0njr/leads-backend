@@ -1,6 +1,4 @@
-using MediatR;
-
-namespace LeadsManagement.Application.Features.Commands.Create;
+namespace LeadsManagement.Models;
 public record CreateContactRequest
 {
     public string? Name { get; set; }
