@@ -13,7 +13,7 @@ docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=P@ssw0rd" -p 1433:1433 --nam
 ```
 remember to set a password and user, and update the connection string data.
 
-the port for connection is default to: HTTP 5400, HTTPS 5401, but can be changed on appsettings.json
+The port for connection is default to: HTTP 5400, HTTPS 5401, but can be changed on appsettings.json
 
 # How to run
 after the configuration is done, the first step is to run migrations, with:
